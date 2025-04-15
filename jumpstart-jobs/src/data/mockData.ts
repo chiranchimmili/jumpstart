@@ -8,7 +8,7 @@ export interface JobPosting {
   };
   description: string;
   duration: string;
-  type: 'internship' | 'part-time' | 'contract';
+  type: 'internship' | 'part-time' | 'contract' | 'project';
   difficulty: 'beginner' | 'intermediate';
   skills: {
     required: string[];
@@ -135,6 +135,106 @@ export const mockJobs: JobPosting[] = [
     compensation: {
       type: 'hourly',
       amount: '$25-30/hour'
+    }
+  },
+  {
+    id: '6',
+    title: 'AI Chat Bot Development Project',
+    company: {
+      name: 'EduTech Innovations',
+      location: 'Remote',
+    },
+    description: 'Build a custom AI chatbot for an educational platform. You\'ll integrate with OpenAI\'s API to create a bot that helps students with programming questions. Great opportunity to gain experience with AI and API integration.',
+    duration: '2 weeks',
+    type: 'project',
+    difficulty: 'intermediate',
+    skills: {
+      required: ['Python', 'REST APIs', 'Basic ML/AI concepts'],
+      preferred: ['OpenAI API', 'FastAPI', 'Docker']
+    },
+    compensation: {
+      type: 'fixed',
+      amount: '$1,000 total'
+    }
+  },
+  {
+    id: '7',
+    title: 'E-commerce Website Feature',
+    company: {
+      name: 'ShopLocal',
+      location: 'Remote',
+    },
+    description: 'Implement a wishlist feature for a local e-commerce platform. You\'ll work on both frontend and backend components, including database design and UI implementation. Perfect for gaining full-stack development experience.',
+    duration: '1 week',
+    type: 'project',
+    difficulty: 'beginner',
+    skills: {
+      required: ['React', 'Node.js', 'SQL'],
+      preferred: ['Redux', 'TypeScript', 'Stripe API']
+    },
+    compensation: {
+      type: 'fixed',
+      amount: '$500 total'
+    }
+  },
+  {
+    id: '8',
+    title: 'Mobile App Analytics Dashboard',
+    company: {
+      name: 'AppMetrics',
+      location: 'Remote',
+    },
+    description: 'Create a real-time analytics dashboard for a mobile app. You\'ll work with real data to build interactive charts and graphs showing user engagement metrics. Great opportunity to learn data visualization.',
+    duration: '3 weeks',
+    type: 'project',
+    difficulty: 'beginner',
+    skills: {
+      required: ['JavaScript', 'Chart.js', 'HTML/CSS'],
+      preferred: ['React', 'D3.js', 'Firebase']
+    },
+    compensation: {
+      type: 'fixed',
+      amount: '$1,500 total'
+    }
+  },
+  {
+    id: '9',
+    title: 'API Documentation Website',
+    company: {
+      name: 'DevDocs Pro',
+      location: 'Remote',
+    },
+    description: 'Build a modern, responsive documentation website for a public API. You\'ll create interactive API examples, implement search functionality, and ensure mobile compatibility. Perfect for learning technical documentation and frontend development.',
+    duration: '2 weeks',
+    type: 'project',
+    difficulty: 'beginner',
+    skills: {
+      required: ['HTML/CSS', 'JavaScript', 'Technical Writing'],
+      preferred: ['React', 'Docusaurus', 'OpenAPI/Swagger']
+    },
+    compensation: {
+      type: 'fixed',
+      amount: '$800 total'
+    }
+  },
+  {
+    id: '10',
+    title: 'Automated Testing Suite',
+    company: {
+      name: 'QualityFirst Software',
+      location: 'Remote',
+    },
+    description: 'Develop an automated testing suite for a web application. You\'ll write end-to-end tests, set up CI/CD integration, and create test documentation. Great for learning software testing and automation.',
+    duration: '2 weeks',
+    type: 'project',
+    difficulty: 'intermediate',
+    skills: {
+      required: ['JavaScript', 'Cypress', 'Git'],
+      preferred: ['GitHub Actions', 'Jest', 'TypeScript']
+    },
+    compensation: {
+      type: 'fixed',
+      amount: '$1,200 total'
     }
   }
 ];

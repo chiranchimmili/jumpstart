@@ -9,7 +9,7 @@ interface NewJobForm extends Omit<JobPosting, 'id'> {
     location: string;
   };
   duration: string;
-  type: 'internship' | 'part-time' | 'contract';
+  type: 'internship' | 'part-time' | 'contract' | 'project';
   difficulty: 'beginner' | 'intermediate';
   skills: {
     required: string[];
