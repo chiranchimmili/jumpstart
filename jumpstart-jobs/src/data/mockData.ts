@@ -3,23 +3,20 @@ export interface JobPosting {
   title: string;
   company: {
     name: string;
-    logo?: string;
     location: string;
   };
   description: string;
   duration: string;
-  type: 'internship' | 'part-time' | 'contract' | 'project';
-  difficulty: 'beginner' | 'intermediate';
+  type: 'internship' | 'co-op' | 'full-time' | 'project';
+  difficulty: 'beginner' | 'intermediate' | 'advanced';
   skills: {
     required: string[];
     preferred: string[];
   };
   compensation: {
-    type: 'hourly' | 'fixed' | 'range';
+    type: 'hourly' | 'fixed' | 'salary';
     amount: string;
   };
-  isSaved?: boolean;
-  isCompleted?: boolean;
 }
 
 export interface Skill {
@@ -39,204 +36,204 @@ export interface User {
 export const mockJobs: JobPosting[] = [
   {
     id: '1',
-    title: 'Frontend Developer Intern',
+    title: 'Software Engineering Intern',
     company: {
-      name: 'TechStart Solutions',
-      location: 'Remote',
+      name: 'TechCorp',
+      location: 'San Francisco, CA',
     },
-    description: 'Join our team to help build modern web applications using React. You\'ll work on real features that impact our customers, with guidance from senior developers. Perfect for students looking to gain practical experience in frontend development.',
+    description: 'Join our engineering team to work on cutting-edge web applications. You\'ll collaborate with senior engineers to build and maintain our core products.',
     duration: '3 months',
     type: 'internship',
-    difficulty: 'beginner',
+    difficulty: 'intermediate',
     skills: {
-      required: ['React', 'JavaScript', 'HTML', 'CSS'],
-      preferred: ['TypeScript', 'Tailwind CSS', 'Git']
+      required: ['JavaScript', 'React', 'TypeScript'],
+      preferred: ['Node.js', 'AWS', 'Docker'],
     },
     compensation: {
       type: 'hourly',
-      amount: '$20-25/hour'
-    }
+      amount: '$35/hour',
+    },
   },
   {
     id: '2',
-    title: 'Backend Developer (Part-Time)',
+    title: 'AI Chat Bot Development Project',
     company: {
-      name: 'DataFlow Systems',
-      location: 'San Francisco, CA (Hybrid)',
+      name: 'AI Solutions Inc',
+      location: 'Remote',
     },
-    description: 'Help build and maintain our REST APIs and microservices. You\'ll work with our engineering team to implement new features, optimize database queries, and ensure high performance of our backend systems.',
-    duration: '6 months',
-    type: 'part-time',
-    difficulty: 'intermediate',
+    description: 'Develop a conversational AI chatbot using natural language processing. The project involves training models and implementing a user-friendly interface.',
+    duration: '2 weeks',
+    type: 'project',
+    difficulty: 'advanced',
     skills: {
-      required: ['Node.js', 'Express', 'SQL', 'REST APIs'],
-      preferred: ['MongoDB', 'Docker', 'AWS']
+      required: ['Python', 'Machine Learning', 'NLP'],
+      preferred: ['TensorFlow', 'PyTorch', 'Flask'],
     },
     compensation: {
-      type: 'hourly',
-      amount: '$30-35/hour'
-    }
+      type: 'fixed',
+      amount: '$1,000',
+    },
   },
   {
     id: '3',
-    title: 'Full Stack Developer',
+    title: 'Frontend Developer Co-op',
     company: {
-      name: 'InnovateLab',
-      location: 'New York, NY (Remote)',
+      name: 'WebCraft Studios',
+      location: 'Boston, MA',
     },
-    description: 'Work on an exciting startup project building a data visualization platform. You\'ll contribute to both frontend and backend development, working with modern technologies and best practices.',
-    duration: '4 months',
-    type: 'contract',
+    description: 'Work on our client-facing web applications. This co-op position offers hands-on experience with modern frontend technologies and agile development practices.',
+    duration: '6 months',
+    type: 'co-op',
     difficulty: 'intermediate',
     skills: {
-      required: ['React', 'Node.js', 'PostgreSQL', 'RESTful APIs'],
-      preferred: ['D3.js', 'GraphQL', 'AWS']
+      required: ['HTML', 'CSS', 'JavaScript', 'React'],
+      preferred: ['Next.js', 'Tailwind CSS', 'GraphQL'],
     },
     compensation: {
-      type: 'fixed',
-      amount: '$8,000 total'
-    }
+      type: 'hourly',
+      amount: '$30/hour',
+    },
   },
   {
     id: '4',
-    title: 'Mobile App Developer',
-    company: {
-      name: 'AppWorks Inc.',
-      location: 'Remote',
-    },
-    description: 'Develop features for our React Native mobile app. Perfect opportunity for students interested in mobile development. You\'ll work on user-facing features and integrate with backend APIs.',
-    duration: '3 months',
-    type: 'internship',
-    difficulty: 'beginner',
-    skills: {
-      required: ['React Native', 'JavaScript', 'REST APIs'],
-      preferred: ['TypeScript', 'Redux', 'Mobile Development']
-    },
-    compensation: {
-      type: 'hourly',
-      amount: '$22-28/hour'
-    }
-  },
-  {
-    id: '5',
-    title: 'DevOps Engineering Intern',
-    company: {
-      name: 'CloudTech Solutions',
-      location: 'Seattle, WA (Hybrid)',
-    },
-    description: 'Learn cloud infrastructure and DevOps practices hands-on. You\'ll work with our team to manage cloud resources, implement CI/CD pipelines, and automate deployment processes.',
-    duration: '6 months',
-    type: 'internship',
-    difficulty: 'intermediate',
-    skills: {
-      required: ['Linux', 'Git', 'Basic Programming'],
-      preferred: ['AWS', 'Docker', 'Jenkins', 'Terraform']
-    },
-    compensation: {
-      type: 'hourly',
-      amount: '$25-30/hour'
-    }
-  },
-  {
-    id: '6',
-    title: 'AI Chat Bot Development Project',
-    company: {
-      name: 'EduTech Innovations',
-      location: 'Remote',
-    },
-    description: 'Build a custom AI chatbot for an educational platform. You\'ll integrate with OpenAI\'s API to create a bot that helps students with programming questions. Great opportunity to gain experience with AI and API integration.',
-    duration: '2 weeks',
-    type: 'project',
-    difficulty: 'intermediate',
-    skills: {
-      required: ['Python', 'REST APIs', 'Basic ML/AI concepts'],
-      preferred: ['OpenAI API', 'FastAPI', 'Docker']
-    },
-    compensation: {
-      type: 'fixed',
-      amount: '$1,000 total'
-    }
-  },
-  {
-    id: '7',
     title: 'E-commerce Website Feature',
     company: {
-      name: 'ShopLocal',
+      name: 'ShopSmart',
       location: 'Remote',
     },
-    description: 'Implement a wishlist feature for a local e-commerce platform. You\'ll work on both frontend and backend components, including database design and UI implementation. Perfect for gaining full-stack development experience.',
+    description: 'Implement a new product recommendation feature for our e-commerce platform. This project involves both frontend and backend development.',
     duration: '1 week',
     type: 'project',
     difficulty: 'beginner',
     skills: {
-      required: ['React', 'Node.js', 'SQL'],
-      preferred: ['Redux', 'TypeScript', 'Stripe API']
+      required: ['JavaScript', 'Node.js', 'MongoDB'],
+      preferred: ['Express.js', 'React', 'Redux'],
     },
     compensation: {
       type: 'fixed',
-      amount: '$500 total'
-    }
+      amount: '$500',
+    },
+  },
+  {
+    id: '5',
+    title: 'Junior Full Stack Developer',
+    company: {
+      name: 'InnovateTech',
+      location: 'New York, NY',
+    },
+    description: 'Join our growing team as a full stack developer. You\'ll work on both frontend and backend features, with opportunities to learn and grow.',
+    duration: 'Full-time',
+    type: 'full-time',
+    difficulty: 'intermediate',
+    skills: {
+      required: ['JavaScript', 'Python', 'SQL', 'React'],
+      preferred: ['Django', 'PostgreSQL', 'AWS'],
+    },
+    compensation: {
+      type: 'salary',
+      amount: '$75,000/year',
+    },
+  },
+  {
+    id: '6',
+    title: 'Mobile App Analytics Dashboard',
+    company: {
+      name: 'DataInsights',
+      location: 'Remote',
+    },
+    description: 'Create a dashboard to visualize user analytics for our mobile app. This project involves data processing and visualization.',
+    duration: '3 weeks',
+    type: 'project',
+    difficulty: 'intermediate',
+    skills: {
+      required: ['JavaScript', 'D3.js', 'React'],
+      preferred: ['TypeScript', 'Redux', 'Chart.js'],
+    },
+    compensation: {
+      type: 'fixed',
+      amount: '$1,500',
+    },
+  },
+  {
+    id: '7',
+    title: 'Backend Engineering Intern',
+    company: {
+      name: 'CloudScale',
+      location: 'Seattle, WA',
+    },
+    description: 'Work on our cloud infrastructure and backend services. Learn about microservices architecture and cloud computing.',
+    duration: '4 months',
+    type: 'internship',
+    difficulty: 'advanced',
+    skills: {
+      required: ['Python', 'Java', 'SQL'],
+      preferred: ['AWS', 'Docker', 'Kubernetes'],
+    },
+    compensation: {
+      type: 'hourly',
+      amount: '$40/hour',
+    },
   },
   {
     id: '8',
-    title: 'Mobile App Analytics Dashboard',
-    company: {
-      name: 'AppMetrics',
-      location: 'Remote',
-    },
-    description: 'Create a real-time analytics dashboard for a mobile app. You\'ll work with real data to build interactive charts and graphs showing user engagement metrics. Great opportunity to learn data visualization.',
-    duration: '3 weeks',
-    type: 'project',
-    difficulty: 'beginner',
-    skills: {
-      required: ['JavaScript', 'Chart.js', 'HTML/CSS'],
-      preferred: ['React', 'D3.js', 'Firebase']
-    },
-    compensation: {
-      type: 'fixed',
-      amount: '$1,500 total'
-    }
-  },
-  {
-    id: '9',
     title: 'API Documentation Website',
     company: {
-      name: 'DevDocs Pro',
+      name: 'DevTools Inc',
       location: 'Remote',
     },
-    description: 'Build a modern, responsive documentation website for a public API. You\'ll create interactive API examples, implement search functionality, and ensure mobile compatibility. Perfect for learning technical documentation and frontend development.',
+    description: 'Create a modern documentation website for our API. This project involves creating a user-friendly interface for our API documentation.',
     duration: '2 weeks',
     type: 'project',
     difficulty: 'beginner',
     skills: {
-      required: ['HTML/CSS', 'JavaScript', 'Technical Writing'],
-      preferred: ['React', 'Docusaurus', 'OpenAPI/Swagger']
+      required: ['HTML', 'CSS', 'JavaScript'],
+      preferred: ['Vue.js', 'Markdown', 'Swagger'],
     },
     compensation: {
       type: 'fixed',
-      amount: '$800 total'
-    }
+      amount: '$800',
+    },
+  },
+  {
+    id: '9',
+    title: 'Data Science Co-op',
+    company: {
+      name: 'AnalyticsPro',
+      location: 'Chicago, IL',
+    },
+    description: 'Work with our data science team to analyze customer behavior and develop predictive models.',
+    duration: '8 months',
+    type: 'co-op',
+    difficulty: 'advanced',
+    skills: {
+      required: ['Python', 'R', 'SQL', 'Machine Learning'],
+      preferred: ['TensorFlow', 'Pandas', 'Tableau'],
+    },
+    compensation: {
+      type: 'hourly',
+      amount: '$35/hour',
+    },
   },
   {
     id: '10',
     title: 'Automated Testing Suite',
     company: {
-      name: 'QualityFirst Software',
+      name: 'QualityFirst',
       location: 'Remote',
     },
-    description: 'Develop an automated testing suite for a web application. You\'ll write end-to-end tests, set up CI/CD integration, and create test documentation. Great for learning software testing and automation.',
+    description: 'Develop an automated testing suite for our web application. This project involves creating comprehensive test cases and automation scripts.',
     duration: '2 weeks',
     type: 'project',
     difficulty: 'intermediate',
     skills: {
-      required: ['JavaScript', 'Cypress', 'Git'],
-      preferred: ['GitHub Actions', 'Jest', 'TypeScript']
+      required: ['JavaScript', 'Selenium', 'Jest'],
+      preferred: ['TypeScript', 'Cypress', 'Mocha'],
     },
     compensation: {
       type: 'fixed',
-      amount: '$1,200 total'
-    }
-  }
+      amount: '$1,200',
+    },
+  },
 ];
 
 export const mockUser: User = {
