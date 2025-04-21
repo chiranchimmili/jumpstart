@@ -162,11 +162,11 @@ const Opportunities: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gray-250 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="mb-8 text-center">
-          <h1 className="text-4xl font-bold text-blue-600 mb-4">Find Your Next Opportunity</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Find Your Next Opportunity</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Browse through internships, co-ops, and projects to kickstart your career
           </p>
@@ -180,7 +180,7 @@ const Opportunities: React.FC = () => {
               placeholder="Search jobs, companies, or skills..."
               value={filters.search}
               onChange={(e) => handleFilterChange('search', e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-blue-200 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700 placeholder-gray-400"
+              className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-gray-700 placeholder-gray-400"
             />
             <div className="absolute inset-y-0 right-0 flex items-center pr-3">
               <svg className="h-5 w-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -191,7 +191,7 @@ const Opportunities: React.FC = () => {
         </div>
 
         {/* Filter Controls */}
-        <div className="mb-8 bg-white rounded-xl shadow-sm p-4 border border-blue-100">
+        <div className="mb-8 bg-white rounded-xl shadow-sm p-4 border border-gray-200">
           <div className="flex justify-between items-center mb-4">
             <div className="flex items-center space-x-4">
               <button
@@ -321,7 +321,7 @@ const Opportunities: React.FC = () => {
         {/* Job Listings */}
         <div className="grid grid-cols-1 gap-6">
           {filteredJobs.map((job) => (
-            <div key={job.id} className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden border border-blue-100">
+            <div key={job.id} className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden border border-gray-200">
               <div className="p-6">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                   <div className="flex-1">
@@ -363,10 +363,10 @@ const Opportunities: React.FC = () => {
                       </span>
                       <span className={`text-xs px-2.5 py-1 rounded-full border ${
                         job.difficulty === 'beginner' 
-                          ? 'bg-green-50 text-green-700 border-green-100' 
+                          ? 'bg-green-100 text-green-800 border-green-200'
                           : job.difficulty === 'intermediate'
-                          ? 'bg-yellow-50 text-yellow-700 border-yellow-100'
-                          : 'bg-red-50 text-red-700 border-red-100'
+                          ? 'bg-yellow-100 text-yellow-800 border-yellow-200'
+                          : 'bg-red-100 text-red-800 border-red-200'
                       }`}>
                         {job.difficulty}
                       </span>
@@ -374,7 +374,7 @@ const Opportunities: React.FC = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       <div>
-                        <h4 className="text-sm font-medium text-blue-600 mb-2">Required Skills</h4>
+                        <h4 className="text-sm font-medium text-gray-900 mb-2">Required Skills</h4>
                         <div className="flex flex-wrap gap-2">
                           {job.skills.required.map(skill => (
                             <span key={skill} className="bg-blue-50 text-blue-700 text-xs px-2.5 py-1 rounded-full border border-blue-100">
@@ -384,7 +384,7 @@ const Opportunities: React.FC = () => {
                         </div>
                       </div>
                       <div>
-                        <h4 className="text-sm font-medium text-blue-600 mb-2">Preferred Skills</h4>
+                        <h4 className="text-sm font-medium text-gray-900 mb-2">Preferred Skills</h4>
                         <div className="flex flex-wrap gap-2">
                           {job.skills.preferred.map(skill => (
                             <span key={skill} className="bg-blue-50 text-blue-700 text-xs px-2.5 py-1 rounded-full border border-blue-100">
@@ -394,7 +394,7 @@ const Opportunities: React.FC = () => {
                         </div>
                       </div>
                       <div className="text-right">
-                        <h4 className="text-sm font-medium text-blue-600 mb-2">Compensation</h4>
+                        <h4 className="text-sm font-medium text-gray-900 mb-2">Compensation</h4>
                         <span className="text-green-600 font-medium">{job.compensation.amount}</span>
                       </div>
                     </div>
